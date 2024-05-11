@@ -1,5 +1,7 @@
 import logging
 import sys
+import os
+
 
 from flask import Flask, request, jsonify
 
@@ -10,7 +12,7 @@ from telegram_bot.telegram_api.parser import parse_text
 # from flask_sslify import SSLify
 
 #telegram bot token
-TOKEN = "xxx"
+TOKEN = os.environ.get('TELEGRAM_TOKEN')
 telegram = TelegramApi(TOKEN)
 
 # disable logging
